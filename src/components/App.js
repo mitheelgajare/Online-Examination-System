@@ -6,6 +6,8 @@ import Login from "./Login";
 
 const App = () => {
   const [select, setSelect] = useState("admin");
+  const [membership, setMembership] = useState(false);
+
   return (
     <div className="">
       <Router>
