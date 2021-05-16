@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+}
+
+.home-page {
+  min-width: 100%;
+  min-height: 100vh;
+  background: #212121;
+  color: white;
+  font-family: "Itim", cursive;
+  -webkit-transition-property: all;
+  transition-property: all;
+}
+
+.home-page .title {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 1rem;
+}
+
+.home-page form {
+  text-align: center;
+  font-size: 2rem;
+  height: 30vh;
+  width: 40vw;
+  -webkit-box-shadow: 0 0 50px 0 #1156cf;
+          box-shadow: 0 0 50px 0 #1156cf;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  padding-top: 2vw;
+  position: relative;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+}
+
+.home-page form:hover {
+  -webkit-box-shadow: 0 0 50px #fcd703;
+          box-shadow: 0 0 50px #fcd703;
+}
+
+.home-page form select {
+  font-family: "Itim", cursive;
+  height: 30px;
+  width: 100px;
+}
+
+.home-page form button {
+  height: 30px;
+  width: 100px;
+  font-family: "Itim", cursive;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  border-radius: 20px;
+  position: relative;
+  left: 4px;
+}
+
+.home-page form button:hover {
+  color: white;
+  background: #1156cf;
+}
+
+.home-page .wrapper {
+  height: 90vh;
+  width: 90vw;
+  -webkit-box-shadow: 0 0 50px 0 #1156cf;
+          box-shadow: 0 0 50px 0 #1156cf;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*# sourceMappingURL=App.css.map */
