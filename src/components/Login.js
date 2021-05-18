@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Data from "./members.json";
 import { useHistory } from "react-router-dom";
 
-const Login = ({ select }) => {
+const Login = ({ select, setMembership }) => {
   const history = useHistory();
   const [uid, setUid] = useState("");
   const [psw, setPsw] = useState("");
@@ -15,8 +15,8 @@ const Login = ({ select }) => {
     for (let item of data) {
       if (item.uid === uid) {
         if (item.password === psw) {
-          history.push("/test");
-          console.log("test");
+          history.push("/home");
+          setMembership("true");
           return null;
         } else {
           alert("Wrong password");

@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-const Home = ({ select, setSelect }) => {
+const Home = ({ select, setSelect, membership }) => {
   const history = useHistory();
+
+  if (membership === "true") {
+    history.push("/home");
+    return null;
+  }
   const handleSubmit = e => {
     e.preventDefault();
     history.push("/login");
@@ -27,7 +32,7 @@ const Home = ({ select, setSelect }) => {
             <option value="student">Student</option>
             <option value="teacher">Teacher</option>
           </select>
-          <button>Go!</button>
+          <button>Login!</button>
         </form>
       </div>
     </div>

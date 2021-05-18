@@ -1,0 +1,23 @@
+.navbar {
+  min-width: 100%;
+  height: 10vh;
+  color: white;
+  background: #212121;
+  font-family: "Itim", cursive;
+
+  .link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .mlink {
+    position: absolute;
+    right: 0;
+    font-size: 2.5rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+  }
+}
