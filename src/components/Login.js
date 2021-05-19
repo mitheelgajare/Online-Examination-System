@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Data from "./members.json";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const Login = ({ select, setMembership }) => {
   const history = useHistory();
@@ -8,10 +9,10 @@ const Login = ({ select, setMembership }) => {
   const [psw, setPsw] = useState("");
   const handleSubmit = e => {
     e.preventDefault();
+
     let data = Data.filter(member => {
       return member.role === select;
     });
-
     for (let item of data) {
       if (item.uid === uid) {
         if (item.password === psw) {
@@ -24,7 +25,6 @@ const Login = ({ select, setMembership }) => {
         }
       }
     }
-
     alert(`You are either not a member or not a ${select}`);
   };
 

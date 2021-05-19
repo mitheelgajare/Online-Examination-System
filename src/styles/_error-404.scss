@@ -1,0 +1,23 @@
+.error-404-page {
+  height: 100vh;
+  min-width: 100%;
+  background: #212121;
+  color: white;
+  font-family: "KoHo", cursive;
+  position: absolute;
+  top: 0;
+  font-size: 2rem;
+  div {
+    text-align: center;
+    h1 {
+      font-size: 3rem;
+    }
+    .link {
+      color: white;
+      display: block;
+    }
+    .sl {
+      margin-top: 3vh;
+    }
+  }
+}

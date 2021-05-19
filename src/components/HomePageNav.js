@@ -14,7 +14,7 @@ const HomePageNav = ({ select }) => {
         Exam
       </Link>
       {select === "admin" || select === "teacher" ? (
-        <Link to="/about" className="link">
+        <Link to="/questions" className="link">
           Questions
         </Link>
       ) : null}
@@ -24,12 +24,15 @@ const HomePageNav = ({ select }) => {
         </Link>
       ) : null}
       {select === "admin" ? (
-        <Link to="/about" className="link">
+        <Link to="/addUser" className="link">
           Add User
         </Link>
       ) : null}
       <Link to="/" className="mlink link">
         OES
+      </Link>
+      <Link to="/logout" className="link">
+        Logout
       </Link>
     </div>
   );

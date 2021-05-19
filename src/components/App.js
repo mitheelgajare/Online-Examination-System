@@ -5,6 +5,11 @@ import Home from "./Home";
 import Login from "./Login";
 import HomePage from "./HomePage";
 import AddQuestion from "./AddQuestion";
+import Logout from "./Logout";
+import AddUser from "./AddUser";
+import QuestionsHome from "./QuestionsHome";
+import AllQuestions from "./AllQuestions";
+import Error404 from "./Error404";
 
 const App = () => {
   if (
@@ -42,7 +47,22 @@ const App = () => {
             <HomePage membership={membership} select={select} />
           </Route>
           <Route exact path="/addQuestion">
-            <AddQuestion />
+            <AddQuestion select={select} membership={membership} />
+          </Route>
+          <Route exact path="/logout">
+            <Logout setMembership={setMembership} />
+          </Route>
+          <Route exact path="/addUser">
+            <AddUser select={select} membership={membership} />
+          </Route>
+          <Route exact path="/questions">
+            <QuestionsHome select={select} membership={membership} />
+          </Route>
+          <Route exact path="/allQuestions">
+            <AllQuestions />
+          </Route>
+          <Route path="*">
+            <Error404 />
           </Route>
         </Switch>
       </Router>

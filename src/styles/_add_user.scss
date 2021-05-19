@@ -1,0 +1,46 @@
+.add-user-page {
+  min-width: 100%;
+  background: #212121;
+  min-height: 100vh;
+  color: white;
+  font-family: "KoHo", sans-serif;
+  div {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 10vh;
+  }
+  form {
+    height: 90vh;
+    width: 30vw;
+    // background: #333;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "KoHo", sans-serif;
+    font-size: 1.5rem;
+    input {
+      width: 100%;
+      height: 1.7rem;
+      font-family: "Itim", cursive;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+    }
+
+    select {
+      width: 10vw;
+      text-align: center;
+      font-family: "Itim", cursive;
+    }
+
+    button {
+      width: 10vw;
+      font-family: "Itim", cursive;
+      transition-property: all;
+      transition-duration: 1s;
+      &:hover {
+        background: #1156cf;
+        color: white;
+      }
+    }
+  }
+}

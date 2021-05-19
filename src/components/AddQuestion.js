@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+import axios from "axios";
 
-const AddQuestion = () => {
-  const handleSubmit = e => {
-    e.preventDefault();
-    let options_arr = options.split(",");
-    const que = { question, options_arr, answer, marks, grade, subject, topic };
-    fetch("http://localhost:5000/writeFile").then(res => {
-      console.log(res.json());
-    });
-    console.log(que);
-    return null;
-  };
+const AddQuestion = ({ membership, select }) => {
+  const history = useHistory();
 
   const [question, setQuestion] = useState("");
   const [options, setOptions] = useState("");
@@ -19,6 +12,20 @@ const AddQuestion = () => {
   const [grade, setGrade] = useState("");
   const [subject, setSubject] = useState("");
   const [topic, setTopic] = useState("");
+
+  if (membership === "false" || select === "student") {
+    history.push("/login");
+    return null;
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    let options_arr = options.split(",");
+    const que = { question, options_arr, answer, marks, grade, subject, topic };
+    axios.post("http://localhost:5000/addQuestion", que);
+    history.push("/home");
+    return null;
+  };
 
   return (
     <div className="add-question-page">
