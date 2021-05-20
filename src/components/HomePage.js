@@ -10,7 +10,7 @@ const HomePage = ({ membership, select }) => {
   }
 
   return (
-    <div>
+    <div className="mega-home-page">
       <HomePageNav select={select} />
     </div>
   );
