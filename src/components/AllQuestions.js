@@ -19,7 +19,21 @@ const AllQuestions = () => {
       {isPending && <div>Loading...</div>}
       {questions &&
         questions.map(question => {
-          return <div className="all-questions">{question.question}</div>;
+          return (
+            <div className="all-questions">
+              {question.question}
+              <div className="options">
+                {question.options_arr.map(opt => (
+                  <span>{opt},</span>
+                ))}
+              </div>
+              <div className="answer">Correct Answer: {question.answer}</div>
+              <div className="marks">Marks: {question.marks}</div>
+              <div className="grade">Grade: {question.grade}</div>
+              <div className="subject">Subject: {question.subject}</div>
+              <div className="topic">Topic : {question.topic}</div>
+            </div>
+          );
         })}
     </div>
   );

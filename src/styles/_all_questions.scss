@@ -14,5 +14,41 @@
     padding: 1rem;
     margin-top: 2vh;
     margin-bottom: 2vh;
+    position: relative;
+    .options {
+      position: absolute;
+      left: 20%;
+      top: 30%;
+    }
+
+    .answer {
+      position: absolute;
+      left: 35%;
+      top: 30%;
+    }
+
+    .marks {
+      position: absolute;
+      top: 30%;
+      left: 47%;
+    }
+
+    .grade {
+      position: absolute;
+      top: 30%;
+      left: 53%;
+    }
+
+    .subject {
+      position: absolute;
+      top: 30%;
+      left: 59%;
+    }
+
+    .topic {
+      position: absolute;
+      left: 68%;
+      top: 30%;
+    }
   }
 }

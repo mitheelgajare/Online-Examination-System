@@ -366,5 +366,42 @@ body {
   padding: 1rem;
   margin-top: 2vh;
   margin-bottom: 2vh;
+  position: relative;
+}
+
+.all-questions-page .all-questions .options {
+  position: absolute;
+  left: 20%;
+  top: 30%;
+}
+
+.all-questions-page .all-questions .answer {
+  position: absolute;
+  left: 35%;
+  top: 30%;
+}
+
+.all-questions-page .all-questions .marks {
+  position: absolute;
+  top: 30%;
+  left: 47%;
+}
+
+.all-questions-page .all-questions .grade {
+  position: absolute;
+  top: 30%;
+  left: 53%;
+}
+
+.all-questions-page .all-questions .subject {
+  position: absolute;
+  top: 30%;
+  left: 59%;
+}
+
+.all-questions-page .all-questions .topic {
+  position: absolute;
+  left: 68%;
+  top: 30%;
 }
 /*# sourceMappingURL=App.css.map */
