@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Data from "./members.json";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 
 const Login = ({ select, setMembership }) => {
   const history = useHistory();
   const [uid, setUid] = useState("");
   const [psw, setPsw] = useState("");
+  const [Data, setData] = useState(null);
+
+  fetch("http://localhost:5000/getUsers")
+    .then(res => res.json())
+    .then(data => {
+      setData(data);
+    });
+
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -32,24 +38,28 @@ const Login = ({ select, setMembership }) => {
 
   return (
     <div className="login-page">
-      <div>Login!</div>
-      <form action="" autoComplete="off" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder={placeholder}
-          value={uid}
-          onChange={e => setUid(e.target.value)}
-          className="ftest"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={psw}
-          onChange={e => setPsw(e.target.value)}
-          className="test"
-        />
-        <button>Login!</button>
-      </form>
+      {Data && (
+        <div>
+          <div>Login!</div>
+          <form action="" autoComplete="off" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder={placeholder}
+              value={uid}
+              onChange={e => setUid(e.target.value)}
+              className="ftest"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={psw}
+              onChange={e => setPsw(e.target.value)}
+              className="test"
+            />
+            <button>Login!</button>
+          </form>
+        </div>
+      )}
     </div>
   );
 };

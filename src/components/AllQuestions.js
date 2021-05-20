@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router";
-import axios from "axios";
 
 const AllQuestions = () => {
-  let questions = fetch("http://localhost:5000/getQuestions").then(json => {
-    console.log(json);
-    return JSON.parse(json);
-  });
+  const [questions, setQuestions] = useState(null);
+  const [isPending, setIsPending] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/getQuestions")
+      .then(res => res.json())
+      .then(data => {
+        setQuestions(data);
+        setIsPending(false);
+      });
+  }, []);
 
   return (
-    <div>
-      <button>Click Me!</button>
-      {questions.map(question => {
-        return <div>{question.question}</div>;
-      })}
+    <div className="all-questions-page">
+      <div className="title">All Questions</div>
+      {isPending && <div>Loading...</div>}
+      {questions &&
+        questions.map(question => {
+          return <div className="all-questions">{question.question}</div>;
+        })}
     </div>
   );
 };
