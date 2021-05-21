@@ -6,7 +6,9 @@ const AddQuestionPaper = () => {
     <div className="add-question-paper">
       <div className="title">Add Question Paper</div>
       <form action="">
-        <input type="text" />
+        <label htmlFor="n"></label>
+        <input type="text" placeholder="Name" id="n" />
+        <label htmlFor=""></label>
       </form>
     </div>
   );
