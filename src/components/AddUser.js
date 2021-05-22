@@ -25,7 +25,6 @@ const AddUser = ({ select, membership }) => {
     axios
       .post("http://localhost:5000/addUser", member)
       .then(res => {
-        console.log(res);
         if (res.status === 201) {
           alert("User added successfully!");
           history.push("/home");

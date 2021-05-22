@@ -10,7 +10,6 @@ import AddUser from "./AddUser";
 import QuestionsHome from "./QuestionsHome";
 import AllQuestions from "./AllQuestions";
 import Error404 from "./Error404";
-import AddQuestionPaper from "./AddQuestionPaper";
 
 const App = () => {
   if (
@@ -60,10 +59,7 @@ const App = () => {
             <QuestionsHome select={select} membership={membership} />
           </Route>
           <Route exact path="/allQuestions">
-            <AllQuestions />
-          </Route>
-          <Route exact path="/addQuestionPaper">
-            <AddQuestionPaper />
+            <AllQuestions select={select} membership={membership} />
           </Route>
           <Route path="*">
             <Error404 />

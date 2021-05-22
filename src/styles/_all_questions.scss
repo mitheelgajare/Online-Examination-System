@@ -4,51 +4,69 @@
   background: #212121;
   color: white;
   font-family: "KoHo", sans-serif;
+  text-align: center;
 
   .title {
     text-align: center;
     font-size: 3rem;
   }
-  .all-questions {
-    border: 2px solid white;
-    padding: 1rem;
+  form {
+    width: 40vw;
+    background: #212121;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 2vh;
-    margin-bottom: 2vh;
-    position: relative;
-    .options {
-      position: absolute;
-      left: 20%;
-      top: 30%;
+    .title {
+      font-size: 2rem;
     }
 
-    .answer {
-      position: absolute;
-      left: 35%;
-      top: 30%;
+    select,
+    input {
+      font-family: "KoHo", sans-serif;
+      height: 1.875rem;
+      width: 100%;
+      margin-top: 2vh;
     }
 
-    .marks {
-      position: absolute;
-      top: 30%;
-      left: 47%;
+    button {
+      width: 25%;
+      font-family: "Itim", cursive;
+      margin-top: 2vh;
+      background: rgb(11, 168, 241);
     }
+  }
 
-    .grade {
-      position: absolute;
-      top: 30%;
-      left: 53%;
-    }
+  .all-questions {
+    min-width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    font-family: "Itim", cursive;
+    text-align: center;
 
-    .subject {
-      position: absolute;
-      top: 30%;
-      left: 59%;
-    }
+    table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10vh;
+      th {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+        border: 2px solid white;
+      }
 
-    .topic {
-      position: absolute;
-      left: 68%;
-      top: 30%;
+      td {
+        border: 2px solid white;
+        input {
+        }
+      }
     }
+    // .question {
+    //   padding: 1rem;
+    //   border: 2px solid white;
+    // }
   }
 }

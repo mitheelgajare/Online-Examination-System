@@ -168,8 +168,8 @@ body {
   min-width: 100%;
   height: 10vh;
   color: white;
-  background: #212121;
-  font-family: "Itim", cursive;
+  background: #333;
+  font-family: "KoHo", sans-serif;
 }
 
 .navbar .link {
@@ -194,6 +194,7 @@ body {
   background: rgba(51, 51, 51, 0.9);
   color: white;
   font-family: "KoHo", sans-serif;
+  text-align: center;
 }
 
 .add-question-page .title {
@@ -355,6 +356,7 @@ body {
   background: #212121;
   color: white;
   font-family: "KoHo", sans-serif;
+  text-align: center;
 }
 
 .all-questions-page .title {
@@ -362,82 +364,66 @@ body {
   font-size: 3rem;
 }
 
-.all-questions-page .all-questions {
-  border: 2px solid white;
-  padding: 1rem;
+.all-questions-page form {
+  width: 40vw;
+  background: #212121;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 2vh;
-  margin-bottom: 2vh;
-  position: relative;
 }
 
-.all-questions-page .all-questions .options {
-  position: absolute;
-  left: 20%;
-  top: 30%;
+.all-questions-page form .title {
+  font-size: 2rem;
 }
 
-.all-questions-page .all-questions .answer {
-  position: absolute;
-  left: 35%;
-  top: 30%;
+.all-questions-page form select,
+.all-questions-page form input {
+  font-family: "KoHo", sans-serif;
+  height: 1.875rem;
+  width: 100%;
+  margin-top: 2vh;
 }
 
-.all-questions-page .all-questions .marks {
-  position: absolute;
-  top: 30%;
-  left: 47%;
+.all-questions-page form button {
+  width: 25%;
+  font-family: "Itim", cursive;
+  margin-top: 2vh;
+  background: #0ba8f1;
 }
 
-.all-questions-page .all-questions .grade {
-  position: absolute;
-  top: 30%;
-  left: 53%;
+.all-questions-page .all-questions {
+  min-width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vh;
+  font-family: "Itim", cursive;
+  text-align: center;
 }
 
-.all-questions-page .all-questions .subject {
-  position: absolute;
-  top: 30%;
-  left: 59%;
+.all-questions-page .all-questions table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
 }
 
-.all-questions-page .all-questions .topic {
-  position: absolute;
-  left: 68%;
-  top: 30%;
+.all-questions-page .all-questions table th {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  border: 2px solid white;
+}
+
+.all-questions-page .all-questions table td {
+  border: 2px solid white;
 }
 
 .mega-home-page {
   min-width: 100%;
   height: 100vh;
   background: #333;
-}
-
-.add-question-paper {
-  height: 100vh;
-  min-width: 100%;
-  background: #212121;
-  color: white;
-  font-family: "Itim", cursive;
-}
-
-.add-question-paper .title {
-  font-size: 3rem;
   text-align: center;
-}
-
-.add-question-paper form {
-  text-align: center;
-  height: 45vh;
-  width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10vh;
-}
-
-.add-question-paper form input {
-  width: 100%;
-  height: 2rem;
-  font-family: "Itim", cursive;
-  font-size: 1rem;
 }
 /*# sourceMappingURL=App.css.map */

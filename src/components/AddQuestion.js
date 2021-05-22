@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios";
 import { grades, subjects } from "./arraysData";
+import HomePageNav from "./HomePageNav";
 
 const AddQuestion = ({ membership, select }) => {
   const history = useHistory();
@@ -10,8 +11,8 @@ const AddQuestion = ({ membership, select }) => {
   const [options, setOptions] = useState("");
   const [answer, setAnswer] = useState("");
   const [marks, setMarks] = useState("");
-  const [grade, setGrade] = useState("");
-  const [subject, setSubject] = useState("");
+  const [grade, setGrade] = useState("1");
+  const [subject, setSubject] = useState("Maths");
   const [topic, setTopic] = useState("");
   const [isPending, setIsPending] = useState(false);
 
@@ -19,6 +20,7 @@ const AddQuestion = ({ membership, select }) => {
     history.push("/login");
     return null;
   }
+  console.log(select);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -49,6 +51,7 @@ const AddQuestion = ({ membership, select }) => {
 
   return (
     <div className="add-question-page">
+      <HomePageNav select={select} />
       {isPending && <div>Loading...</div>}
       {!isPending && (
         <div>
