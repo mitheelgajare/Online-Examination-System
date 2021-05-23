@@ -29,8 +29,8 @@ const Home = ({ select, setSelect, membership }) => {
             onChange={e => setSelect(e.target.value)}
           >
             <option value="admin">Admin</option>
-            <option value="student">Student</option>
             <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
           </select>
           <button>Login!</button>
         </form>

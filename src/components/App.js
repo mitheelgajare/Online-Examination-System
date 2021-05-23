@@ -9,7 +9,9 @@ import Logout from "./Logout";
 import AddUser from "./AddUser";
 import QuestionsHome from "./QuestionsHome";
 import AllQuestions from "./AllQuestions";
+import AllQuestionPapers from "./AllQuestionPapers";
 import Error404 from "./Error404";
+import Exam from "./Exam";
 
 const App = () => {
   if (
@@ -60,6 +62,12 @@ const App = () => {
           </Route>
           <Route exact path="/allQuestions">
             <AllQuestions select={select} membership={membership} />
+          </Route>
+          <Route exact path="/allQuestionPapers">
+            <AllQuestionPapers select={select} membership={membership} />
+          </Route>
+          <Route exact path="/exam">
+            <Exam select={select} membership={membership} />
           </Route>
           <Route path="*">
             <Error404 />

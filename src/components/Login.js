@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Login = ({ select, setMembership }) => {
   const history = useHistory();
@@ -16,6 +17,7 @@ const Login = ({ select, setMembership }) => {
   //       setData(data);
   //     });
   // }, []);
+  const location = useLocation();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -23,13 +25,13 @@ const Login = ({ select, setMembership }) => {
       .post("http://localhost:5000/authenticate", { uid, psw, select })
       .then(res => {
         if (res.status === 200) {
-          history.push("/home");
           setMembership("true");
-          return null;
+          history.push("/home");
         }
       })
       .catch(err => {
         alert("Incorrect username or password");
+        setMembership("false");
         setPsw("");
       });
   };

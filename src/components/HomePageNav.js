@@ -10,7 +10,7 @@ const HomePageNav = ({ select }) => {
       <Link to="/about" className="link">
         Exam Results
       </Link>
-      <Link to="/about" className="link">
+      <Link to="/exam" className="link">
         Exam
       </Link>
       {select === "admin" || select === "teacher" ? (
@@ -19,7 +19,7 @@ const HomePageNav = ({ select }) => {
         </Link>
       ) : null}
       {select === "admin" || select === "teacher" ? (
-        <Link to="/about" className="link">
+        <Link to="/allQuestionPapers" className="link">
           Question Papers
         </Link>
       ) : null}

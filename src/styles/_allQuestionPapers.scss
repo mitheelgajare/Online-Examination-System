@@ -1,0 +1,77 @@
+.all-question-papers-page {
+  background: #212121;
+  color: white;
+  font-family: "KoHo", sans-serif;
+  min-width: 100%;
+  min-height: 100vh;
+
+  .ctl {
+    font-size: 1.5rem;
+    margin-left: 2.5vw;
+  }
+
+  .test-link {
+    color: rgb(74, 243, 44);
+    font-size: 1.5rem;
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    border: 2px solid white;
+    margin-top: 2vh;
+    margin-right: 3vw;
+  }
+
+  .pop-up {
+    height: 90vh;
+    width: 80vw;
+    background: #333;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    color: white;
+    font-family: "Itim", cursive;
+    text-align: center;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .total-marks {
+      text-align: right;
+      margin-right: 1vw;
+    }
+
+    .close {
+      position: absolute;
+      right: 0;
+      background: #333;
+      color: white;
+    }
+
+    .title-2 {
+      font-size: 1.7rem;
+    }
+
+    .mega-question {
+      text-align: left;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+
+      li {
+        font-size: 1.5rem;
+      }
+
+      .option {
+        display: block;
+        margin: 0.5rem;
+      }
+    }
+    .activate,
+    .close2 {
+      width: 10%;
+      font-family: "Itim", cursive;
+      margin-right: 1vw;
+    }
+  }
+}

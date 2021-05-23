@@ -1,7 +1,7 @@
 .add-question-page {
   min-width: 100%;
   height: 100vh;
-  background: rgba(51, 51, 51, 0.9);
+  background: #212121;
   color: white;
   font-family: "KoHo", sans-serif;
   text-align: center;
@@ -15,16 +15,17 @@
   form {
     // background: #333;
     height: 90vh;
-    width: 90vw;
+    width: 60vw;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+
     input,
     select {
       width: 100%;
       height: 1.7rem;
       text-align: center;
-      font-family: "KoHo", sans-serif;
+      font-family: "Itim", cursive;
       margin-top: 2vh;
       margin-bottom: 2vh;
       font-size: 1rem;
