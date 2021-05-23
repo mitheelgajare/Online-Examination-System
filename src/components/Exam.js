@@ -4,7 +4,7 @@ import HomePageNav from "./HomePageNav";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Exam = ({ select, membership }) => {
+const Exam = ({ select, membership, currentUser }) => {
   const history = useHistory();
   const [questionPapers, setQuestionPapers] = useState([]);
   const [currentQuestionPaper, setCurrentQuestionPaper] = useState(null);
@@ -29,21 +29,47 @@ const Exam = ({ select, membership }) => {
       .then(res => res.json())
       .then(data => {
         setCurrentQuestionPaperQuestion(data);
+        console.log(data);
+        let count = 0;
         data.forEach(question => {
-          setTotalMarks(totalMarks + parseInt(question.marks));
+          count += parseInt(question.marks);
         });
+
+        setTotalMarks(count);
       });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
+    let toBeSent = {};
     const radioButtons = document.querySelectorAll(".radio");
+    toBeSent["uid"] = currentUser;
+    toBeSent["qpid"] = currentQuestionPaper.id;
+    let result = {};
     radioButtons.forEach(rb => {
       if (rb.checked) {
         console.log(rb.name);
         console.log(rb.value);
+        result[rb.name] = rb.value;
       }
     });
+    toBeSent["result"] = result;
+    console.log(toBeSent);
+    await axios
+      .post("http://localhost:5000/saveResult", toBeSent)
+      .then(res => {
+        if (res.status === 201) {
+          alert(
+            "Thank you for attempting the exam. Your results have been saved. \n Have a nice day "
+          );
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        alert("Something went wrong!");
+      });
+
+    setCurrentQuestionPaperQuestion(null);
   };
 
   if (select === "student" || membership === "false") {

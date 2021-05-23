@@ -1,23 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useHistory, withRouter } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
-const Login = ({ select, setMembership }) => {
+const Login = ({ select, setMembership, setCurrentUser, currentUser }) => {
   const history = useHistory();
   const [uid, setUid] = useState("");
   const [psw, setPsw] = useState("");
-
-  // const [Data, setData] = useState(null);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/getUsers")
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setData(data);
-  //     });
-  // }, []);
-  const location = useLocation();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,6 +14,7 @@ const Login = ({ select, setMembership }) => {
       .then(res => {
         if (res.status === 200) {
           setMembership("true");
+          setCurrentUser(uid);
           history.push("/home");
         }
       })

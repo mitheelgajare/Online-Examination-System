@@ -20,15 +20,20 @@ const App = () => {
   ) {
     sessionStorage.setItem("OES-select", "admin");
     sessionStorage.setItem("OES-membership", "false");
+    sessionStorage.setItem("OES-CU", "");
   }
   const [select, setSelect] = useState(sessionStorage.getItem("OES-select"));
   const [membership, setMembership] = useState(
     sessionStorage.getItem("OES-membership")
   );
+  const [currentUser, setCurrentUser] = useState(
+    sessionStorage.getItem("OES-CU")
+  );
 
   useEffect(() => {
     sessionStorage.setItem("OES-select", select);
     sessionStorage.setItem("OES-membership", membership);
+    sessionStorage.setItem("OES-CU", currentUser);
   });
 
   return (
@@ -43,7 +48,11 @@ const App = () => {
             />
           </Route>
           <Route exact path="/login">
-            <Login select={select} setMembership={setMembership} />
+            <Login
+              select={select}
+              setMembership={setMembership}
+              setCurrentUser={setCurrentUser}
+            />
           </Route>
           <Route exact path="/home">
             <HomePage membership={membership} select={select} />
@@ -67,7 +76,12 @@ const App = () => {
             <AllQuestionPapers select={select} membership={membership} />
           </Route>
           <Route exact path="/exam">
-            <Exam select={select} membership={membership} />
+            <Exam
+              select={select}
+              membership={membership}
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
           </Route>
           <Route path="*">
             <Error404 />
