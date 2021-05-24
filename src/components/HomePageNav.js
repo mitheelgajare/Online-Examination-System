@@ -7,12 +7,6 @@ const HomePageNav = ({ select }) => {
       <Link to="/home" className="link">
         Home
       </Link>
-      <Link to="/about" className="link">
-        Exam Results
-      </Link>
-      <Link to="/exam" className="link">
-        Exam
-      </Link>
       {select === "admin" || select === "teacher" ? (
         <Link to="/questions" className="link">
           Questions
@@ -23,6 +17,12 @@ const HomePageNav = ({ select }) => {
           Question Papers
         </Link>
       ) : null}
+      <Link to="/exam" className="link">
+        Exam
+      </Link>
+      <Link to="/about" className="link">
+        Exam Results
+      </Link>
       {select === "admin" ? (
         <Link to="/addUser" className="link">
           Add User

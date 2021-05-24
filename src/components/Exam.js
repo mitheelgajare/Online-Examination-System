@@ -13,12 +13,25 @@ const Exam = ({ select, membership, currentUser }) => {
   const [totalMarks, setTotalMarks] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getActiveQuestionPapers")
+    fetch(`http://localhost:5000/getActiveQuestionPapers?uid=${currentUser}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-        setQuestionPapers(data);
+        let new_data = data.filter(dat => {
+          return dat.isActive === true;
+        });
+        setQuestionPapers(new_data);
       });
+
+    if (
+      sessionStorage.getItem("OES-refreshed") === null ||
+      sessionStorage.getItem("OES-refreshed") === "null"
+    ) {
+      sessionStorage.setItem("OES-refreshed", "false");
+    } else if (sessionStorage.getItem("OES-refreshed") === "true") {
+      handleSubmit();
+      sessionStorage.setItem("OES-refreshed", "false");
+    } else {
+    }
   }, []);
 
   const callQuestionPaper = questionPaper => {
@@ -29,21 +42,28 @@ const Exam = ({ select, membership, currentUser }) => {
       .then(res => res.json())
       .then(data => {
         setCurrentQuestionPaperQuestion(data);
-        console.log(data);
         let count = 0;
         data.forEach(question => {
           count += parseInt(question.marks);
         });
 
         setTotalMarks(count);
+        sessionStorage.setItem("OES-refreshed", "true");
       });
   };
 
   const handleSubmit = async e => {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     let toBeSent = {};
     const radioButtons = document.querySelectorAll(".radio");
     toBeSent["uid"] = currentUser;
+
+    if (!currentQuestionPaper) {
+      alert("Your marks will not be counted as you refreshed the page");
+      return null;
+    }
     toBeSent["qpid"] = currentQuestionPaper.id;
     let result = {};
     radioButtons.forEach(rb => {
@@ -54,7 +74,6 @@ const Exam = ({ select, membership, currentUser }) => {
       }
     });
     toBeSent["result"] = result;
-    console.log(toBeSent);
     await axios
       .post("http://localhost:5000/saveResult", toBeSent)
       .then(res => {
@@ -65,14 +84,14 @@ const Exam = ({ select, membership, currentUser }) => {
         }
       })
       .catch(err => {
-        console.log(err);
         alert("Something went wrong!");
       });
 
     setCurrentQuestionPaperQuestion(null);
+    sessionStorage.setItem("OES-refreshed", "false");
   };
 
-  if (select === "student" || membership === "false") {
+  if (membership === "false") {
     history.push("/login");
     return null;
   }
@@ -82,16 +101,20 @@ const Exam = ({ select, membership, currentUser }) => {
       <HomePageNav select={select} />
       <div className="ctl">Click the link to attempt the examination</div>
       <ol>
-        {questionPapers.map(questionPaper => (
-          <li>
-            <Link
-              className="test-link"
-              onClick={() => callQuestionPaper(questionPaper)}
-            >
-              {questionPaper.name}
-            </Link>
-          </li>
-        ))}
+        {questionPapers.length !== 0 ? (
+          questionPapers.map(questionPaper => (
+            <li>
+              <Link
+                className="test-link"
+                onClick={() => callQuestionPaper(questionPaper)}
+              >
+                {questionPaper.name}
+              </Link>
+            </li>
+          ))
+        ) : (
+          <div>No Exams 😀</div>
+        )}
       </ol>
 
       {currentQuestionPaperQuestion && (

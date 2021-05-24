@@ -30,6 +30,12 @@ const AddQuestion = ({ membership, select }) => {
       alert("There can only be four options");
       return null;
     }
+
+    if (!options_arr.includes(answer)) {
+      alert("The answer has to be present in the options");
+      return null;
+    }
+
     setIsPending(true);
 
     const que = { question, options_arr, answer, marks, grade, subject, topic };

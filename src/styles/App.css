@@ -191,7 +191,7 @@ body {
 
 .add-question-page {
   min-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: #212121;
   color: white;
   font-family: "KoHo", sans-serif;
@@ -294,6 +294,7 @@ body {
   height: 100vh;
   background: #212121;
   color: white;
+  font-size: 1.5rem;
 }
 
 .questions-home-page div {
@@ -353,7 +354,7 @@ body {
 
 .all-questions-page {
   min-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: #212121;
   color: white;
   font-family: "KoHo", sans-serif;
@@ -380,10 +381,16 @@ body {
 
 .all-questions-page form select,
 .all-questions-page form input {
-  font-family: "KoHo", sans-serif;
+  font-family: "Itim", cursive;
   height: 1.875rem;
   width: 100%;
   margin-top: 2vh;
+}
+
+.all-questions-page form label {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  display: block;
 }
 
 .all-questions-page form button {
@@ -421,11 +428,21 @@ body {
   border: 2px solid white;
 }
 
+.all-questions-page .all-questions table .checkbox {
+  height: 1rem;
+  width: 1rem;
+}
+
 .mega-home-page {
   min-width: 100%;
-  height: 100vh;
-  background: #333;
+  min-height: 100vh;
+  background: #212121;
   text-align: center;
+}
+
+.mega-home-page img {
+  width: 90vw;
+  max-height: 90vh;
 }
 
 .all-question-papers-page {

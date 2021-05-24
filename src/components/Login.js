@@ -14,7 +14,7 @@ const Login = ({ select, setMembership, setCurrentUser, currentUser }) => {
       .then(res => {
         if (res.status === 200) {
           setMembership("true");
-          setCurrentUser(uid);
+          setCurrentUser(uid.toLowerCase());
           history.push("/home");
         }
       })

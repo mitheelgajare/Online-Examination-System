@@ -80,18 +80,21 @@ const AllQuestions = ({ select, membership }) => {
       {!isPending && (
         <form action="" autoComplete="off">
           <div className="title">Filter by grade or subject</div>
-
+          <label htmlFor="s1">Grade:</label>
           <select
             value={gradeInput}
             onChange={e => setGradeInput(e.target.value)}
+            id="s1"
           >
             {grades.map(grade => (
               <option value={grade}>{grade}</option>
             ))}
           </select>
+          <label htmlFor="s2">Subject</label>
           <select
             value={subjectInput}
             onChange={e => setSubjectInput(e.target.value)}
+            id="s2"
           >
             {subjects.map(subject => (
               <option value={subject}>{subject}</option>
@@ -109,6 +112,7 @@ const AllQuestions = ({ select, membership }) => {
                   type="checkbox"
                   id="top-checkbox"
                   onClick={handleSelect}
+                  className="checkbox"
                 />
               </th>
               <th>Question Statement</th>
@@ -138,19 +142,18 @@ const AllQuestions = ({ select, membership }) => {
               </tr>
             )}
           </table>
+          <form action="" autoComplete="off" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Name of Question Paper"
+              required
+              value={name}
+              onChange={e => setName(e.target.value)}
+            />
+            <button>Create Question Paper</button>
+          </form>
         </div>
       )}
-
-      <form action="" autoComplete="off" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name of Question Paper"
-          required
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-        <button>Create Question Paper</button>
-      </form>
     </div>
   );
 };
