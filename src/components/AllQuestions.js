@@ -112,7 +112,6 @@ const AllQuestions = ({ select, membership }) => {
                   type="checkbox"
                   id="top-checkbox"
                   onClick={handleSelect}
-                  className="checkbox"
                 />
               </th>
               <th>Question Statement</th>

@@ -96,6 +96,7 @@ const AllQuestionPapers = ({ select, membership }) => {
           <ol type="1" className="ol">
             {currentQuestionPaperQuestion.map(question => (
               <div className="mega-question">
+                <div className="marks">Marks:{question.marks}</div>
                 <li>{question.question}</li>
                 {question.options_arr.map(option => (
                   <div className="option">

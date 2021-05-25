@@ -27,6 +27,7 @@ const Exam = ({ select, membership, currentUser }) => {
       sessionStorage.getItem("OES-refreshed") === "null"
     ) {
       sessionStorage.setItem("OES-refreshed", "false");
+      sessionStorage.setItem("OES-CP", "");
     } else if (sessionStorage.getItem("OES-refreshed") === "true") {
       handleSubmit();
       sessionStorage.setItem("OES-refreshed", "false");
@@ -46,9 +47,9 @@ const Exam = ({ select, membership, currentUser }) => {
         data.forEach(question => {
           count += parseInt(question.marks);
         });
-
         setTotalMarks(count);
         sessionStorage.setItem("OES-refreshed", "true");
+        sessionStorage.setItem("OES-CP", JSON.stringify(questionPaper.id));
       });
   };
 
@@ -62,25 +63,29 @@ const Exam = ({ select, membership, currentUser }) => {
 
     if (!currentQuestionPaper) {
       alert("Your marks will not be counted as you refreshed the page");
-      return null;
+      toBeSent["qpid"] = parseInt(sessionStorage.getItem("OES-CP"));
+      toBeSent["result"] = {};
+    } else {
+      toBeSent["qpid"] = currentQuestionPaper.id;
+      let result = {};
+      radioButtons.forEach(rb => {
+        if (rb.checked) {
+          console.log(rb.name);
+          console.log(rb.value);
+          result[rb.name] = rb.value;
+        }
+      });
+      toBeSent["result"] = result;
     }
-    toBeSent["qpid"] = currentQuestionPaper.id;
-    let result = {};
-    radioButtons.forEach(rb => {
-      if (rb.checked) {
-        console.log(rb.name);
-        console.log(rb.value);
-        result[rb.name] = rb.value;
-      }
-    });
-    toBeSent["result"] = result;
     await axios
       .post("http://localhost:5000/saveResult", toBeSent)
       .then(res => {
         if (res.status === 201) {
-          alert(
-            "Thank you for attempting the exam. Your results have been saved. \n Have a nice day "
-          );
+          if (currentQuestionPaper) {
+            alert(
+              "Thank you for attempting the exam. Your results have been saved. \n Have a nice day "
+            );
+          }
         }
       })
       .catch(err => {
@@ -89,10 +94,11 @@ const Exam = ({ select, membership, currentUser }) => {
 
     setCurrentQuestionPaperQuestion(null);
     sessionStorage.setItem("OES-refreshed", "false");
+    window.location.reload();
   };
 
-  if (membership === "false") {
-    history.push("/login");
+  if (membership === "false" || select !== "student") {
+    history.push("/");
     return null;
   }
 
@@ -126,6 +132,7 @@ const Exam = ({ select, membership, currentUser }) => {
           <ol type="1" className="ol">
             {currentQuestionPaperQuestion.map(question => (
               <div className="mega-question">
+                <div className="marks">Marks:{question.marks}</div>
                 <li>{question.question}</li>
                 {question.options_arr.map(option => (
                   <div className="option">

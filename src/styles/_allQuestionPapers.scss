@@ -22,7 +22,7 @@
   }
 
   .pop-up {
-    height: 90vh;
+    min-height: 90vh;
     width: 80vw;
     background: #333;
     position: absolute;
@@ -65,6 +65,11 @@
       .option {
         display: block;
         margin: 0.5rem;
+      }
+
+      .marks {
+        text-align: right;
+        padding-top: 0;
       }
     }
     .activate,

@@ -83,7 +83,7 @@ const AddQuestion = ({ membership, select }) => {
               onChange={e => setOptions(e.target.value)}
               id="options"
             />
-            <label htmlFor="answer">Correct Answer</label>
+            <label htmlFor="answer">Correct Answer</label><br />
             <input
               type="text"
               placeholder="Correct Answer"
@@ -91,8 +91,10 @@ const AddQuestion = ({ membership, select }) => {
               value={answer}
               onChange={e => setAnswer(e.target.value)}
               id="answer"
+              className="si"
             />
-            <label htmlFor="marks">Marks</label>
+            <br />
+            <label htmlFor="marks">Marks</label><br />
             <input
               type="text"
               placeholder="Marks"
@@ -100,8 +102,9 @@ const AddQuestion = ({ membership, select }) => {
               value={marks}
               onChange={e => setMarks(e.target.value)}
               id="marks"
-            />
-            <label htmlFor="grade">Grade</label>
+              className="msi"
+            /><br />
+            <label htmlFor="grade">Grade</label><br />
             <select
               value={grade}
               onChange={e => setGrade(e.target.value)}
@@ -111,7 +114,8 @@ const AddQuestion = ({ membership, select }) => {
                 <option value={grade}>{grade}</option>
               ))}
             </select>
-            <label htmlFor="subject">Subject</label>
+            <br />
+            <label htmlFor="subject">Subject</label><br />
             <select
               value={subject}
               onChange={e => setSubject(e.target.value)}
@@ -121,7 +125,8 @@ const AddQuestion = ({ membership, select }) => {
                 <option value={subject}>{subject}</option>
               ))}
             </select>
-            <label htmlFor="topic">Topic</label>
+            <br />
+            <label htmlFor="topic">Topic</label><br />
             <input
               type="text"
               placeholder="Topic"
@@ -129,7 +134,8 @@ const AddQuestion = ({ membership, select }) => {
               value={topic}
               onChange={e => setTopic(e.target.value)}
               id="topic"
-            />
+              className="si"
+            /><br />
             <button>Submit!</button>
           </form>
         </div>

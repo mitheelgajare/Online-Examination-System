@@ -12,6 +12,7 @@ import AllQuestions from "./AllQuestions";
 import AllQuestionPapers from "./AllQuestionPapers";
 import Error404 from "./Error404";
 import Exam from "./Exam";
+import ExamResults from "./ExamResults";
 
 const App = () => {
   if (
@@ -81,6 +82,13 @@ const App = () => {
               membership={membership}
               currentUser={currentUser}
               setCurrentUser={setCurrentUser}
+            />
+          </Route>
+          <Route exact path="/examResults">
+            <ExamResults
+              membership={membership}
+              currentUser={currentUser}
+              select={select}
             />
           </Route>
           <Route path="*">

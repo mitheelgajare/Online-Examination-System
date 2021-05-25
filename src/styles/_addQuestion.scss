@@ -20,8 +20,7 @@
     margin-right: auto;
     text-align: center;
 
-    input,
-    select {
+    input {
       width: 100%;
       height: 1.7rem;
       text-align: center;
@@ -30,6 +29,27 @@
       margin-bottom: 2vh;
       font-size: 1rem;
     }
+
+    select, .msi {
+      width: 30%;
+      height: 1.7rem;
+      text-align: center;
+      font-family: "Itim", cursive;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+      font-size: 1rem;
+    }
+
+    .si {
+      width: 40%;
+      height: 1.7rem;
+      text-align: center;
+      font-family: "Itim", cursive;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+      font-size: 1rem;
+    }
+
     button {
       width: 10vw;
       transition-property: all;

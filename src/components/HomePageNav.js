@@ -17,12 +17,16 @@ const HomePageNav = ({ select }) => {
           Question Papers
         </Link>
       ) : null}
-      <Link to="/exam" className="link">
-        Exam
-      </Link>
-      <Link to="/about" className="link">
-        Exam Results
-      </Link>
+      {select === "student" ? (
+        <Link to="/exam" className="link">
+          Exam
+        </Link>
+      ) : null}
+      {select === "student" ? (
+        <Link to="/examResults" className="link">
+          Exam Results
+        </Link>
+      ) : null}
       {select === "admin" ? (
         <Link to="/addUser" className="link">
           Add User
