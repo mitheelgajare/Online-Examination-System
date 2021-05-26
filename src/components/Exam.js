@@ -83,7 +83,7 @@ const Exam = ({ select, membership, currentUser }) => {
         if (res.status === 201) {
           if (currentQuestionPaper) {
             alert(
-              "Thank you for attempting the exam. Your results have been saved. \n Have a nice day "
+              "Thank you for attempting the exam. Your results have been saved.\nHave a nice day!"
             );
           }
         }

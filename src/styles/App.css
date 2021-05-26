@@ -171,6 +171,7 @@ body {
   background: #333;
   font-family: "KoHo", sans-serif;
   text-align: center;
+  position: relative;
 }
 
 .navbar .link {
@@ -179,6 +180,18 @@ body {
   color: white;
   padding: 1rem;
   font-size: 1.5rem;
+}
+
+.navbar .userName {
+  text-align: left;
+}
+
+.navbar .userName .un {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  color: #4af32c;
 }
 
 .navbar .mlink {
@@ -222,7 +235,8 @@ body {
   font-size: 1rem;
 }
 
-.add-question-page form select, .add-question-page form .msi {
+.add-question-page form select,
+.add-question-page form .msi {
   width: 30%;
   height: 1.7rem;
   text-align: center;
@@ -248,7 +262,7 @@ body {
   transition-property: all;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
-  font-family: "KoHo", sans-serif;
+  font-family: "Itim", cursive;
 }
 
 .add-question-page form button:hover {
@@ -262,9 +276,10 @@ body {
   min-height: 100vh;
   color: white;
   font-family: "KoHo", sans-serif;
+  text-align: center;
 }
 
-.add-user-page div {
+.add-user-page .title {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 10vh;
@@ -386,7 +401,7 @@ body {
 }
 
 .all-questions-page form {
-  width: 40vw;
+  width: 30vw;
   background: #212121;
   text-align: center;
   margin-left: auto;
@@ -415,8 +430,12 @@ body {
 .all-questions-page form button {
   width: 25%;
   font-family: "Itim", cursive;
-  margin-top: 2vh;
+  margin-top: 4vh;
   background: #0ba8f1;
+}
+
+.all-questions-page form .cqpb {
+  width: 50%;
 }
 
 .all-questions-page .all-questions {
@@ -448,6 +467,11 @@ body {
 }
 
 .all-questions-page .all-questions table .checkbox {
+  height: 1rem;
+  width: 1rem;
+}
+
+.all-questions-page .all-questions table .cb {
   height: 1rem;
   width: 1rem;
 }
@@ -559,6 +583,7 @@ body {
 
 .exam-results-page .title {
   font-size: 3rem;
+  margin-top: 1rem;
 }
 
 .exam-results-page table {

@@ -56,10 +56,18 @@ const App = () => {
             />
           </Route>
           <Route exact path="/home">
-            <HomePage membership={membership} select={select} />
+            <HomePage
+              membership={membership}
+              select={select}
+              currentUser={currentUser}
+            />
           </Route>
           <Route exact path="/addQuestion">
-            <AddQuestion select={select} membership={membership} />
+            <AddQuestion
+              select={select}
+              membership={membership}
+              currentUser={currentUser}
+            />
           </Route>
           <Route exact path="/logout">
             <Logout setMembership={setMembership} />

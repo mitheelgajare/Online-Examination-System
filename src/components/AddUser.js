@@ -54,6 +54,7 @@ const AddUser = ({ select, membership }) => {
           id="id"
           placeholder="User ID"
           required
+          pattern="^\S+$"
         />
         <label htmlFor="password">Password</label>
         <input
@@ -63,6 +64,7 @@ const AddUser = ({ select, membership }) => {
           id="password"
           placeholder="Password"
           required
+          pattern="^\S+$"
         />
         <label htmlFor="role">Role</label>
         <br />

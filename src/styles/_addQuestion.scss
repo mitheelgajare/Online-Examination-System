@@ -30,7 +30,8 @@
       font-size: 1rem;
     }
 
-    select, .msi {
+    select,
+    .msi {
       width: 30%;
       height: 1.7rem;
       text-align: center;
@@ -54,7 +55,7 @@
       width: 10vw;
       transition-property: all;
       transition-duration: 1s;
-      font-family: "KoHo", sans-serif;
+      font-family: "Itim", cursive;
 
       &:hover {
         background: #1156cf;

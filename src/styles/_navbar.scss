@@ -5,6 +5,7 @@
   background: #333;
   font-family: "KoHo", sans-serif;
   text-align: center;
+  position: relative;
 
   .link {
     display: inline-block;
@@ -12,6 +13,18 @@
     color: white;
     padding: 1rem;
     font-size: 1.5rem;
+  }
+
+  .userName {
+    text-align: left;
+
+    .un {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 1.5rem;
+      color: #4af32c;
+    }
   }
 
   .mlink {

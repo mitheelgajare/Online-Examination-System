@@ -112,6 +112,7 @@ const AllQuestions = ({ select, membership }) => {
                   type="checkbox"
                   id="top-checkbox"
                   onClick={handleSelect}
+                  className="cb"
                 />
               </th>
               <th>Question Statement</th>
@@ -149,7 +150,7 @@ const AllQuestions = ({ select, membership }) => {
               value={name}
               onChange={e => setName(e.target.value)}
             />
-            <button>Create Question Paper</button>
+            <button className="cqpb">Create Question Paper</button>
           </form>
         </div>
       )}

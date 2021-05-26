@@ -16,10 +16,10 @@ const Home = ({ select, setSelect, membership }) => {
   return (
     <div className="home-page">
       <div className="wrapper">
-        <div className="title">Phadang School</div>
+        <div className="title">ABC School</div>
 
         <form action="" autoComplete="off" onSubmit={handleSubmit}>
-          <label htmlFor="select">Who are you?</label>
+          <label htmlFor="select">Please select your role</label>
           <br />
           <br />
           <select
