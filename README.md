@@ -50,10 +50,30 @@ To run the application, follow these steps:
    ** 10. Cut that file (image) and paste it inside the build folder of the project.
 9. The frontend server will start in your default browser, you can use the application!
 
-# Sample Admin login :-
+# Dummy Users for your convenience:-
 
 ID = admin
 Password = admin
+ID = teacher1
+Password = teacher1
+ID = teacher2
+Password = teacher2
+ID = student1
+Password = student1  
+ID = student2  
+Password = student2
+
+# For your convenience some dummy data has already been created for you
+
+Questions :-
+5 Maths Questions for class 5
+2 Chemistry Questions for class 5
+Question Papers :-
+Maths_Class_5  
+Chemistry Class 5
+Exam Results :-
+student1 attempted Maths_Class_5 and scored 78%
+student2 has not attempted any examination
 
 # Future Plans
 
@@ -62,6 +82,7 @@ Here are the plans we wish to incorporate in the future :-
 1. The ability of a teacher to set time for the examination. ( The form will auto close on the specified time)
 2. Using MongoDB as our database so as to improve efficiency and to incorporate the ability to delete and update users, questions and question papers.
 3. Filter question papers by student's current grade. ( Students of x grade will only be able attempt exams for x grade )
+4. The ability of a teacher to be able to add questions in bulk, by writing an excel (.xlsx) file and uploading it on the website.
 
 # If there are any errors/problems during installation/execution or in case of any unexpected behaviour, feel free to call +91 777 403 5485
 

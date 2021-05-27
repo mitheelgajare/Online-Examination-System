@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import HomePageNav from "./HomePageNav";
-import Image from "./../HomeBackground.png";
+import Image from "./../4.png";
 
 const HomePage = ({ membership, select }) => {
   const history = useHistory();
