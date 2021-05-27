@@ -69,11 +69,11 @@ Questions :-
 5 Maths Questions for class 5
 2 Chemistry Questions for class 5
 Question Papers :-
-Maths_Class_5  
-Chemistry Class 5
+Maths_Class_5 (5 questions, activated)
+Chemistry Class 5 (2 questions, deactivated)
 Exam Results :-
 student1 attempted Maths_Class_5 and scored 78%
-student2 has not attempted any examination
+student2 has not attempted any examinations
 
 # Future Plans
 
