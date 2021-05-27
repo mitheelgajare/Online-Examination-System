@@ -30,11 +30,12 @@ const AllQuestionPapers = ({ select, membership }) => {
       .then(res => res.json())
       .then(data => {
         setCurrentQuestionPaperQuestion(data);
+        let count = 0;
+        for (let question of data) {
+          count += parseInt(question.marks);
+        }
 
-        data.forEach(question => {
-          setTotalMarks(totalMarks + parseInt(question.marks));
-        });
-
+        setTotalMarks(count);
         setActiveOrNot(questionPaper.isActive ? "Deactivate" : "Activate");
       });
   };

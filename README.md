@@ -46,8 +46,6 @@ To run the application, follow these steps:
 7. The Back-end server will start
 8. To start the front-end, go into the project directory ( In command prompt or terminal ) and then type the following command -
    serve -l 3000 -s build
-   ** 9. Once this step is done, locate the file whose name is HomeBackground.png .
-   ** 10. Cut that file (image) and paste it inside the build folder of the project.
 9. The frontend server will start in your default browser, you can use the application!
 
 # Dummy Users for your convenience:-
