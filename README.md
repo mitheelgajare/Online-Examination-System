@@ -82,6 +82,6 @@ Here are the plans we wish to incorporate in the future :-
 3. Filter question papers by student's current grade. ( Students of x grade will only be able attempt exams for x grade )
 4. The ability of a teacher to be able to add questions in bulk, by writing an excel (.xlsx) file and uploading it on the website.
 
-# If there are any errors/problems during installation/execution or in case of any unexpected behaviour, feel free to call +91 777 4093 5785 
+
 
 # Thank you and have a nice day.
